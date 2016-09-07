@@ -68,14 +68,17 @@
 
 
     <!-- Begin page content -->
-    <main id="content" role="main" class="container">
+    <div class="text-center">
+      <img src="http://www.cameronsworld.net/img/content/2/28.gif"/>
+    </div>
+    <main id="content" role="main" class="container" style="display: none;">
       <!-- Fixed navbar -->
-      <div>
+      <div class="nav">
         <a href="#music">music</a>
         <a href="#film">film music/demo reel</a>
         <a href="#updates">updates</a>
         <a href="http://zenmother.com" target="_blank">zen mother</a>
-        <a href="#contact">contact</a>
+        <a href="#contact" data-toggle="toggle" data-target="#contact">contact</a>
       </div>
 
       {% with messages = get_flashed_messages() %}
@@ -120,6 +123,13 @@
   <script type="text/javascript" src="/static/js/libs/bootstrap-3.1.1.min.js" defer></script>
   <script type="text/javascript" src="/static/js/plugins.js" defer></script>
   <script type="text/javascript" src="/static/js/script.js" defer></script>
+  <script type="text/javascript">
+    (function($) {
+      $('.nav a').click(function() {
+          $($(this).data('target')).css('display', 'block');
+      });
+    })(jQuery);
+  </script>
   <!-- Google Analytics - Change UA-XXXXX-X to be your site's ID -->
   <script>
   window._gaq = [['_setAccount','UAXXXXXXXX1'],['_trackPageview'],['_trackPageLoadTime']];
