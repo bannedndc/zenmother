@@ -1,0 +1,78 @@
+{% macro music() -%}
+  <div class="row">
+    <div class="col-sm-5">
+      <iframe style="border: 0;" src="https://bandcamp.com/EmbeddedPlayer/track=3028174152/size=large/bgcol=ffffff/linkcol=333333/minimal=true/transparent=true/" seamless><a href="http://nordra.bandcamp.com/track/apologize-to-me-humanity">Apologize To Me, Humanity by Nordra</a></iframe>
+      <p style="font-style: italic; font-size: 12px;">( full length to be released on SIGE Records )<p>
+    </div>
+    <div class="col-sm-5">
+      <iframe style="border: 0;" src="https://bandcamp.com/EmbeddedPlayer/album=3990198634/size=large/bgcol=ffffff/linkcol=333333/minimal=true/transparent=true/" seamless><a href="http://nordra.bandcamp.com/album/film-audio">film audio by Nordra</a></iframe>
+      <p style="font-style: italic; font-size: 12px;">( film score samples )</p>
+    </div>
+    <div class="col-sm-5">
+      <iframe style="border: 0; width: 350px; height: 350px;" src="https://bandcamp.com/EmbeddedPlayer/track=1068751668/size=large/bgcol=ffffff/linkcol=333333/minimal=true/transparent=true/" seamless><a href="http://zenmother.bandcamp.com/track/mantra">Mantra by Zen Mother</a></iframe>
+      <p style="font-style: italic; font-size: 12px;">( zen mother )</p>
+    </div>
+  </div>
+{%- endmacro %}
+
+{% macro updates(posts, upcoming_shows, past_shows) -%}
+  {% if config.MONI %}
+  {% endif %}
+  {% set post = {'created_at': 'July 23, 2017', 'content': 'SIGE Records is going to be putting out the first Nordra record entitled: Make a Smooth Path From Point to Point.  Spring 2017 is the expected release time. Join the email list to get more updates on the new record.  Make a Smooth Path From Point to Point is about the conversion from analog to digital, what is lost, and what is gained, and how accurate communication or rather the lack thereof can be cripplingly depressing. Like most cripplingly depressing subjects, a glow or sense of relief follows.', 'images': [{'src': 'static/img/saint_vitus.png', 'desc': 'Saint Vitus - SUMAC, Jaye Jayle tour, Aug 2016'}]} %}
+  {% set posts = [post] %}
+
+  {% set upcoming_shows =  upcoming_shows.resultsPage.results.event %}
+  {% set past_shows =  past_shows.resultsPage.results.event %}
+  <div class="row">
+    <div class="col-sm-6">
+      {% for post in posts %}
+        {{ _display_post(post) }}
+      {% endfor %}
+    </div>
+    <div class="col-sm-6" style="background-color: rgba(128, 128, 128, 0.5); padding-top: 10px; padding-bottom: 10px;">
+      <div style="font-style: italic; margin-bottom: 20px; font-weight: 700;">UPCOMING EVENTS</div>
+      {% for show in upcoming_shows %}
+        {{ _display_show(show) }}
+      {% endfor %}
+      <br><br>
+
+      <div style="font-style: italic; margin-bottom: 20px; font-weight: 700;">PAST EVENTS</div>
+      {% for show in past_shows %}
+        {{ _display_show(show) }}
+      {% endfor %}
+    </div>
+  </div>
+{%- endmacro %}
+
+{% macro contact() -%}
+  <strong>NORDRA BOOKING AND FILM SCORE INQUIRIES:</strong>
+  <br>magickmuther@gmail.com<br>
+  <br>
+  <strong>ZEN MOTHER BOOKING: </strong>
+  <br>magiczenmother@gmail.com<br>
+{%- endmacro %}
+
+{% macro _display_post(post) -%}
+  {% for image in post.images %}
+    <img src="{{ image.src }}" alt="{{ image.desc }}" style="max-width: 100%;"/>
+  {% endfor %}
+  <br>
+  {% if False %}
+  <div style="margin-top: 10px;">{{ post.content | safe }}</div>
+  {% endif %}
+  <div style="margin-top: 10px;">{{ '' }}</div>
+{%- endmacro %}
+
+{% macro _display_show(show) -%}
+  <div style="margin-bottom: 10px;">
+    {% set date = show.start.date.split('-') %}
+    <span style="font-weight: 700;">
+      {% for performance in show.performance %}
+        {{ performance.artist.displayName }}{{ ',' if not loop.last }}
+      {% endfor %}
+    </span><br>
+    {{ date[1] }}/{{ date[2] }}<br>
+    {{ show.venue.displayName }}<br>
+    {{ show.location.city[:-4] }}<br>
+  </div>
+{%- endmacro %}
