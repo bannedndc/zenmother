@@ -23,10 +23,9 @@
 <style>
   body {
     letter-spacing: 1px;
-    // cursor: url("http://www.cameronsworld.net/img/content/2/28.gif"), auto;
-    background: #666666 url(http://analogrules.com/counter3c.jpg) no-repeat center fixed;
+    /* cursor: url("http://www.cameronsworld.net/img/content/2/28.gif"), auto; */
+    /* background: #666666 url(http://analogrules.com/counter3c.jpg) no-repeat center fixed; */
     font-family: 'Times New Roman';
-    color: white;
   }
 
   @font-face {
@@ -34,14 +33,13 @@
     src: url(/static/fonts/Canterbury.ttf);
   }
 
+  .canterbury {
+    font-family: Canterbury;
+  }
+
   a {
     color: black;
-    text-transform: uppercase;
-    font-size: 24px;
-    padding: 3px;
-    margin-right: 22px;
-    font-weight: 300;
-    font-family: Canterbury;
+    text-decoration: underline;
   }
 
   a:hover, a:active, a:focus {
@@ -50,8 +48,8 @@
   }
 
   iframe {
-    height: 250px;
-    width: 250px;
+    height: 200px;
+    width: 200px;
   }
 
   @media (min-width: 500px) {
@@ -60,8 +58,8 @@
     }
 
     iframe {
-      height: 350px;
-      width: 350px;
+      height: 300px;
+      width: 300px;
     }
   }
 </style>
@@ -85,11 +83,17 @@
 
 
     <!-- Begin page content -->
-    <main id="content" role="main" class="container">
+    <main id="content" role="main" class="container-fluid">
+      <div class="hidden-xs" style="height: 30px;"></div>
       <!-- Container for macro content -->
       <div class="row">
         <div class="col-md-offset-1 col-md-10">
+          <div style="position: relative;">
+            <h1 class="canterbury" style="color: #000000; font-weight: 500; letter-spacing: 11.4px; font-size: 60px;">NORDRA</h1>
+            <h1 class="canterbury" style="color: #000000; font-weight: 500; letter-spacing: 11.4px; font-size: 60px; position: absolute; top: -19px; left: 6px;">NORDRA</h1>
+          </div>
           <!-- Fixed navbar -->
+          <!-- 
           <div class="nav"> 
             <a href="#music" data-toggle="toggle" data-target="#music-section">music</a>
             <br class="visible-xs">
@@ -99,20 +103,28 @@
             <br class="visible-xs">
             <a href="#contact" data-toggle="toggle" data-target="#contact-section">contact</a>
           </div>
+          -->
+          <div class="hidden-xs" style="height: 50px;"></div>
+          <div class="row">
+            <div class="col-sm-6 col-md-5 col-lg-4">
+              <iframe style="border: 0;" src="https://bandcamp.com/EmbeddedPlayer/track=3028174152/size=large/bgcol=333333/linkcol=ffffff/minimal=true/transparent=true/" seamless><a href="http://nordra.bandcamp.com/track/apologize-to-me-humanity">Apologize To Me, Humanity by Nordra</a></iframe>
+            </div>
+            <div class="col-sm-6 col-md-5 col-lg-4">
+              <iframe style="border: 0;" src="https://bandcamp.com/EmbeddedPlayer/album=188686871/size=large/bgcol=333333/linkcol=ffffff/minimal=true/transparent=true/" seamless><a href="http://nordra.bandcamp.com/album/pylon-ii">PYLON II by Nordra</a></iframe>
+            </div>
+          </div>
 
-          <div style="height: 30px;"></div>
+          <div class="hidden-xs" style="height: 60px;"></div>
+          <div class="visible-xs" style="height: 10px;"></div>
+          <small>Nordra booking: magickmuther@gmail.com</small>
+          <br>
+          <small>Zen Mother booking: magiczenmother@gmail.com</small>
+          <div style="height: 40px;"></div>
+          <small>Full Length out on <a href="http://sigerecords.blogspot.com/" target="_blank">SIGE Records</a> April 2017.</small>
+          <div style="height: 20px;"></div>
 
           {% block content %}
           {% endblock %}
-          <div id="music-section">
-            {{ macros.music() }}
-          </div>
-          <div id="updates-section" style="display: none;">
-            {{ macros.updates(posts, upcoming_shows, past_shows) }}
-          </div>
-          <div id="contact-section" style="display: none; background-color: rgba(128, 128, 128, 0.498039); padding: 10px;">
-            {{ macros.contact() }}
-          </div>
         </div>
 
         <! -- Globe -->
