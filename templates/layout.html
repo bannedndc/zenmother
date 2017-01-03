@@ -28,6 +28,10 @@
     font-family: 'Times New Roman';
   }
 
+  input, button {
+    border-radius: 0;
+  }
+
   @font-face {
     font-family: Canterbury;
     src: url(/static/fonts/Canterbury.ttf);
@@ -90,7 +94,7 @@
         <div class="col-md-offset-1 col-md-10">
           <div style="position: relative;">
             <h1 class="canterbury" style="color: #000000; font-weight: 500; letter-spacing: 11.4px; font-size: 60px;">NORDRA</h1>
-            <h1 class="canterbury" style="color: #000000; font-weight: 500; letter-spacing: 11.4px; font-size: 60px; position: absolute; top: -19px; left: 6px;">NORDRA</h1>
+            <h1 class="canterbury" style="color: #000000; font-weight: 500; letter-spacing: 11.4px; font-size: 60px; position: absolute; top: -19px; left: 4px;">NORDRA</h1>
           </div>
           <!-- Fixed navbar -->
           <!-- 
@@ -116,12 +120,22 @@
 
           <div class="hidden-xs" style="height: 60px;"></div>
           <div class="visible-xs" style="height: 10px;"></div>
-          <small>Nordra booking: magickmuther@gmail.com</small>
+          <small>Nordra booking, scoring inquiries: magickmuther(at)gmail(dot)com</small>
           <br>
-          <small>Zen Mother booking: magiczenmother@gmail.com</small>
+          <small>Zen Mother booking: magiczenmother(at)gmail(dot)com</small>
           <div style="height: 40px;"></div>
-          <small>Full Length out on <a href="http://sigerecords.blogspot.com/" target="_blank">SIGE Records</a> April 2017.</small>
-          <div style="height: 20px;"></div>
+          <small>Harbinger of Spring out on <a href="http://sigerecords.blogspot.com/" target="_blank">SIGE Records</a> April 2017.</small>
+          <div style="height: 40px;"></div>
+
+          <!-- email list -->
+          <strong style="font-size: 14px; font-family: 'Canterbury';">JOIN THE EMAIL LIST OF NORDRA</strong>
+          <form class="form-inline" action="{{ url_for('signup_post') }}" method="post">
+            <div class="form-group">
+              <label class="hide" for="email">Email</label>
+              <input id="email" type="email" name="email" class="form-control" placeholder="email address" style="border-radius: 0; width: 230px; font-size: 12px;">
+            </div>
+            <button type="submit" class="btn" style="background-color: black; font-size: 15px; color: white; border-radius: 0;">&#x25BD;</button>
+          </form>
 
           {% block content %}
           {% endblock %}

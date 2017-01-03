@@ -1,8 +1,9 @@
 #----------------------------------------------------------------------------#
 # Imports
 #----------------------------------------------------------------------------#
-
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
+from postmonkey import PostMonkey
+from postmonkey import MailChimpException
 # from flask.ext.sqlalchemy import SQLAlchemy
 import requests
 import logging
@@ -15,6 +16,7 @@ import os
 
 app = Flask(__name__)
 app.config.from_object('config')
+pm = PostMonkey('5eb1d21efa1f1f5f6e11f1c9c8213e51-us14')
 #db = SQLAlchemy(app)
 
 # Automatically tear down SQLAlchemy.
@@ -52,6 +54,22 @@ def home():
                posts=posts,
 			   upcoming_shows=upcoming_shows.json(),
 			   past_shows=past_shows.json())
+
+
+@app.route('/signup_post', methods=['POST'])
+def signup_post():
+    try:
+        email = request.form['email']
+        #email = request.args.get('email')
+        if email:
+            pm.listSubscribe(id="4f96a5641b", email_address=email, double_optin=False)
+
+    except MailChimpException, e:
+        print e.code
+        print e.error
+        return redirect("/")
+
+    return redirect("/")
 
 #----------------------------------------------------------------------------#
 # Launch.
