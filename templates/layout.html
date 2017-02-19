@@ -34,7 +34,7 @@
 
   @font-face {
       font-family: Cantebury;
-      src: url(Canterbury.ttf);
+      src: url(/static/fonts/Canterbury.ttf);
   }
 
   body {
@@ -106,7 +106,8 @@
   sub {
     font-size: 20px;
   }
-#container {
+
+  .container-fluid {
     width: 800px;
     height: 100%;
     margin-left:auto;
@@ -114,8 +115,7 @@
     padding: 9px;
     text-align: center;
     background-color: rgb(204, 255, 0);
-    background: #666666 url('/static/img/analog_rules.jpg') no-repeat center fixed;
-  /* http://analogrules.com/counter3c.jpg) */
+    background: #666666 url('/static/img/analogrules.jpg') no-repeat center fixed;
   }
 </style>
 <!-- /styles -->
@@ -132,6 +132,7 @@
 </head>
 <header style="display: none;">zen mother music band seattle</header>
 <body>
+  <hr style="position: absolute; top: 80px; width: 100%; border-color: black;"/>
 
   <!-- Wrap all page content here -->
   <div id="wrap">
