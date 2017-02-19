@@ -11,7 +11,7 @@
 <meta name="keywords" content="nordra music band seattle monika khot" />
 <meta name="author" content="">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta property="og:title" content="Nordra"/>
+<meta property="og:title" content="Zen Mother"/>
 <meta property="og:type" content="music"/>
 <meta property="og:url" content="http://www.nordra.net"/>
 <meta property="og:site_name" content="Nordra"/>
@@ -28,50 +28,94 @@
 <link type="text/css" rel="stylesheet" href="/static/css/main.responsive.css" />
 <link type="text/css" rel="stylesheet" href="/static/css/main.quickfix.css" />
 <style>
-  body {
-    letter-spacing: 1px;
-    /* cursor: url("http://www.cameronsworld.net/img/content/2/28.gif"), auto; */
-    /* background: #666666 url(http://analogrules.com/counter3c.jpg) no-repeat center fixed; */
-    font-family: 'Times New Roman';
-  }
-
-  input, button {
-    border-radius: 0;
+  html {
+    height: auto;
   }
 
   @font-face {
-    font-family: Canterbury;
-    src: url(/static/fonts/Canterbury.ttf);
+      font-family: Cantebury;
+      src: url(Canterbury.ttf);
   }
 
-  .canterbury {
-    font-family: Canterbury;
+  body {
+    background-color: rgb(102, 102, 102);
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
   }
 
-  a {
+  h1, h2, h3, h4, h5, h6 {
+    color: rgb(210, 255, 0);
+  }
+
+  h1 {
+    margin-bottom: 0;
+  }
+  h3 {
+    margin-top: 0;
+  }
+
+  .show {
+    width: 55%;
+    height: auto;
+    text-align: left;
+    display: inline-block;
+  }
+
+  .show h1 {
+    float: left;
+  }
+
+  .show div {
+    float: right;
+    text-align: right;
+  }
+
+#soundcloud, #bandcamp {
+    cursor: pointer;
+  }
+
+  .thanks {
+    font-family: Cantebury;
+    font-size: 48px;
+    color: white;
+    margin-bottom: 0;
+    background-color: rgba(0, 0, 0, 0.44);
+    display: inline;
+    box-shadow: 0px 0px 8px rgba(0,0,0,0.8);
+    color: white;
+    padding: 16px;
+  }
+  .glow {
+    background-color: rgba(0, 0, 0, 0.44);
+    display: inline;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.8);
+    color: white;
+    border-radius: 100px;
+  }
+
+  .glow-inverse {
+    font-size: 20px;
+    //background-color: rgba(255, 255, 255, 0.44);
+    //box-shadow: 0px 0px 15px rgba(255,255,255,0.8);
     color: black;
-    text-decoration: underline;
+    font-weight: 700;
+    border-radius: 100px;
+    margin-bottom: 0;
   }
 
-  a:hover, a:active, a:focus {
-    text-decoration: none;
-    color: #d7efd0;
+  sub {
+    font-size: 20px;
   }
-
-  iframe {
-    height: 200px;
-    width: 200px;
-  }
-
-  @media (min-width: 500px) {
-    body {
-      margin-top: 30px;
-    }
-
-    iframe {
-      height: 300px;
-      width: 300px;
-    }
+#container {
+    width: 800px;
+    height: 100%;
+    margin-left:auto;
+    margin-right:auto;
+    padding: 9px;
+    text-align: center;
+    background-color: rgb(204, 255, 0);
+    background: #666666 url('/static/img/analog_rules.jpg') no-repeat center fixed;
+  /* http://analogrules.com/counter3c.jpg) */
   }
 </style>
 <!-- /styles -->
@@ -86,7 +130,7 @@
 <!-- /scripts -->
 
 </head>
-<header style="display: none;">nordra music band seattle monika khot</header>
+<header style="display: none;">zen mother music band seattle</header>
 <body>
 
   <!-- Wrap all page content here -->
@@ -95,62 +139,31 @@
 
     <!-- Begin page content -->
     <main id="content" role="main" class="container-fluid">
-      <div class="hidden-xs" style="height: 30px;"></div>
       <!-- Container for macro content -->
       <div class="row">
         <div class="col-md-offset-1 col-md-10">
-          <div style="position: relative;">
-            <h1 class="canterbury" style="color: #000000; font-weight: 500; letter-spacing: 11.4px; font-size: 60px;">NORDRA</h1>
-            <h1 class="canterbury" style="color: #000000; font-weight: 500; letter-spacing: 11.4px; font-size: 60px; position: absolute; top: -19px; left: 4px;">NORDRA</h1>
-          </div>
-          <!-- Fixed navbar -->
-          <!-- 
-          <div class="nav"> 
-            <a href="#music" data-toggle="toggle" data-target="#music-section">music</a>
-            <br class="visible-xs">
-            <a href="#updates" data-toggle="toggle" data-target="#updates-section">updates</a>
-            <br class="visible-xs">
-            <a href="http://zenmother.com" target="_blank">zen mother</a>
-            <br class="visible-xs">
-            <a href="#contact" data-toggle="toggle" data-target="#contact-section">contact</a>
-          </div>
-          -->
-          <div class="hidden-xs" style="height: 50px;"></div>
-          <div class="row">
-            <div class="col-sm-6 col-md-5 col-lg-4">
-              <iframe style="border: 0;" src="https://bandcamp.com/EmbeddedPlayer/track=3028174152/size=large/bgcol=333333/linkcol=ffffff/minimal=true/transparent=true/" seamless><a href="http://nordra.bandcamp.com/track/apologize-to-me-humanity">Apologize To Me, Humanity by Nordra</a></iframe>
-            </div>
-            <div class="col-sm-6 col-md-5 col-lg-4">
-              <iframe style="border: 0;" src="https://bandcamp.com/EmbeddedPlayer/album=188686871/size=large/bgcol=333333/linkcol=ffffff/minimal=true/transparent=true/" seamless><a href="http://nordra.bandcamp.com/album/pylon-ii">PYLON II by Nordra</a></iframe>
-            </div>
-          </div>
-
-          <div class="hidden-xs" style="height: 60px;"></div>
-          <div class="visible-xs" style="height: 10px;"></div>
-          <small>Nordra booking, scoring inquiries: magickmuther(at)gmail(dot)com</small>
-          <br>
-          <small>Zen Mother booking: magiczenmother(at)gmail(dot)com</small>
-          <div style="height: 40px;"></div>
-          <small>S/T LP out on <a href="http://sigerecords.blogspot.com/" target="_blank">SIGE Records</a> April 2017.</small>
-          <div style="height: 40px;"></div>
-
-          <!-- email list -->
-          <strong style="font-size: 14px; font-family: 'Canterbury';">JOIN MY EMAIL LIST</strong>
-          <form class="form-inline" action="{{ url_for('signup_post') }}" method="post">
-            <div class="form-group">
-              <label class="hide" for="email">Email</label>
-              <input id="email" type="email" name="email" class="form-control" placeholder="email address" style="border-radius: 0; width: 230px; font-size: 12px;">
-            </div>
-            <button type="submit" class="btn" style="background-color: black; font-size: 15px; color: white; border-radius: 0;">&#x25BD;</button>
-          </form>
+	  <h1><img src="/static/img/signbot_zen.gif"></h1>
+	  <br><br><br>
+	  <img src="/static/img/meltytv.gif" height="128px">
+	  <br><br><br>
+	  <br>
+	  <br>
+	  <br>
+	  <br>
+	  <br>
+	  <a id="soundcloud" href="http://soundcloud.com/zenmother" target="_blank"><img src="/static/img/soundcloud_border.png"></a>
+	  <br><br>
+	  <a id="bandcamp" href="http://zenmother.bandcamp.com" target="_blank"><img src="/static/img/bandcamp.gif"></a>
+	  <br>
+	  <br>
+	  <br>
+	  <br><br><br>
+	  <h3 class="thanks">THANKS FOR COMING!</h3>
+	  <img src="/static/img/John_Hackett_Anechoic.jpg" style="display: none;">
+	  <img src="/static/img/eazy.png">
 
           {% block content %}
           {% endblock %}
-        </div>
-
-        <! -- Globe -->
-        <div style="bottom: 0; right: 0; position: fixed;">
-          <img src="http://www.cameronsworld.net/img/content/2/28.gif"/>
         </div>
       <div>
       
