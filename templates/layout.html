@@ -39,7 +39,7 @@
   body {
     background-color: rgb(102, 102, 102);
     height: 100%;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Times New Roman;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -69,19 +69,16 @@
     text-align: right;
   }
 
-#soundcloud, #bandcamp {
+  #soundcloud, #bandcamp {
     cursor: pointer;
   }
 
   .thanks {
     font-family: Cantebury;
-    font-size: 48px;
-    color: white;
+    font-size: 23px;
     margin-bottom: 0;
-    background-color: rgba(0, 0, 0, 0.44);
     display: inline;
-    box-shadow: 0px 0px 8px rgba(0,0,0,0.8);
-    color: white;
+    color: #4c1d1d;
     padding: 16px;
   }
   .glow {
@@ -94,8 +91,6 @@
 
   .glow-inverse {
     font-size: 20px;
-    //background-color: rgba(255, 255, 255, 0.44);
-    //box-shadow: 0px 0px 15px rgba(255,255,255,0.8);
     color: black;
     font-weight: 700;
     border-radius: 100px;
@@ -118,12 +113,21 @@
   }
 
   a {
-    color: #aff1af;
+    color: #4c1d1d;
+    text-decoration: underline;
   }
 
   a:hover, a:focus, a:active {
     text-decoration: underline;
-    color: #aff1af;
+    color: #000;
+  }
+
+  .tourdate div {
+    background-color: black;
+    margin: 3px;
+    text-align: left;
+    padding-left: 4px;
+    padding-right: 4px;
   }
 </style>
 <!-- /styles -->
@@ -156,56 +160,56 @@
 	  <img src="/static/img/meltytv.gif" height="128px">
 	  <br><br><br>
 	  <img src="/static/img/zen17small.jpeg" style="width: 90%">
-	  <p style="text-align: right;">photo by <a href="https://www.instagram.com/lalalalaurn/" target="_blank">Lauren Rodriguez</a></p>
-	  <br><br><br>
-	  <div style="background-color: black; color: white; border: 6px solid white; padding: 7px; display: inline-block;">
-	    <div>7/6 - Seattle, WA - Chop Suey *recordrelease</div>
-	    <div>7/13 - Salt Lake City, UT - Diabolical Records</div>
-	    <div>7/14 - Denver, CO - Thee Haus Ov Where?</div>
-	    <div>7/15 - Wichita, KS - Wichita Psych Fest</div>
-	    <div>7/16 - Lawrence, KS - Replay Lounge</div>
-	    <div>7/17 - St Louis, MO - Foam</div>
-	    <div>7/18 - Chicago, IL - The Hideout</div>
-	    <div>7/19 - Detroit, MI - Trixie’s</div>
-	    <div>7/20 - Toronto, ON - Baby G’s</div>
-	    <div>7/21 - Montreal, QC - The B.O.G</div>
-	    <div>7/22 - Providence, RI - Machines With Magnets</div>
-	    <div>7/23 - Brooklyn, NY - Silent Barn</div>
-	    <div>7/24 - Philadelphia, PA - TBA</div>
-	    <div>7/26 - Charlottesville, VA - The Southern</div>
-	    <div>7/27 - Richmond, VA - Strange Matter</div>
-	    <div>7/28 - Raleigh, NC - King’s</div>
-	    <div>7/29 - Boone, NC - Six Fortyone</div>
-	    <div>7/30 - Atlanta, GA - 360 Cantina</div>
-	    <div>7/31 - New Orleans - TBA</div>
-	    <div>8/1 - Austin, TX - Hotel Vegas</div>
-	    <div>8/2 - Austin, TX - TBA</div>
-	    <div>8/3 - Maria, TX - The Capri</div>
-	    <div>8/4 - Bisbee, AZ - The Quarry</div>
-	    <div>8/5 - Tucson, AZ - Club Congress</div>
-	    <div>8/6 - Phoenix, AZ - Lunchbox</div>
-	    <div>8/7 - Joshua Tree, CA - Taylor Junction</div>
-	    <div>8/8 - Los Angeles, CA - Bootleg Theater</div>
-	    <div>8/9 - Santa Cruz - The Crepe Place</div>
-	    <div>8/10 - San Francisco, CA - El Rio</div>
-	    <div>8/11 - Oakland, CA - Oakland Secret</div>
-	    <div>8/12 - Arcata, CA - TBA</div>
-	    <div>8/13 - Portland, OR - The Know</div>
-	    <div>8/25 - Seattle, WA - Northwest Film Forum / The Holy Mountain live-rescore premiere</div>
+	  <p style="text-align: right; color: #4c1d1d;">photo by <a href="https://www.instagram.com/lalalalaurn/" target="_blank">Lauren Rodriguez</a></p>
+	  <div class="tourdate" style="color: white; border: 1px solid black; display: inline-block;">
+	    <div>7/6&nbsp;&nbsp;&nbsp;&nbsp;Seattle, WA - Chop Suey *recordrelease</div>
+	    <div>7/13&nbsp;&nbsp;&nbsp;Salt Lake City, UT - Diabolical Records</div>
+	    <div>7/14&nbsp;&nbsp;&nbsp;Denver, CO - Thee Haus Ov Where?</div>
+	    <div>7/15&nbsp;&nbsp;&nbsp;Wichita, KS - Wichita Psych Fest</div>
+	    <div>7/16&nbsp;&nbsp;&nbsp;Lawrence, KS - Replay Lounge</div>
+	    <div>7/17&nbsp;&nbsp;&nbsp;St Louis, MO - Foam</div>
+	    <div>7/18&nbsp;&nbsp;&nbsp;Chicago, IL - The Hideout</div>
+	    <div>7/19&nbsp;&nbsp;&nbsp;Detroit, MI - Trixie’s</div>
+	    <div>7/20&nbsp;&nbsp;&nbsp;Toronto, ON - Baby G’s</div>
+	    <div>7/21&nbsp;&nbsp;&nbsp;Montreal, QC - The B.O.G</div>
+	    <div>7/22&nbsp;&nbsp;&nbsp;Providence, RI - Machines With Magnets</div>
+	    <div>7/23&nbsp;&nbsp;&nbsp;Brooklyn, NY - Silent Barn</div>
+	    <div>7/24&nbsp;&nbsp;&nbsp;Philadelphia, PA - TBA</div>
+	    <div>7/26&nbsp;&nbsp;&nbsp;Charlottesville, VA - The Southern</div>
+	    <div>7/27&nbsp;&nbsp;&nbsp;Richmond, VA - Strange Matter</div>
+	    <div>7/28&nbsp;&nbsp;&nbsp;Raleigh, NC - King’s</div>
+	    <div>7/29&nbsp;&nbsp;&nbsp;Boone, NC - Six Fortyone</div>
+	    <div>7/30&nbsp;&nbsp;&nbsp;Atlanta, GA - 360 Cantina</div>
+	    <div>7/31&nbsp;&nbsp;&nbsp;New Orleans - TBA</div>
+	    <div>8/1&nbsp;&nbsp;&nbsp;&nbsp;Austin, TX - Hotel Vegas</div>
+	    <div>8/2&nbsp;&nbsp;&nbsp;&nbsp;Austin, TX - TBA</div>
+	    <div>8/3&nbsp;&nbsp;&nbsp;&nbsp;Maria, TX - The Capri</div>
+	    <div>8/4&nbsp;&nbsp;&nbsp;&nbsp;Bisbee, AZ - The Quarry</div>
+	    <div>8/5&nbsp;&nbsp;&nbsp;&nbsp;Tucson, AZ - Club Congress</div>
+	    <div>8/6&nbsp;&nbsp;&nbsp;&nbsp;Phoenix, AZ - Lunchbox</div>
+	    <div>8/7&nbsp;&nbsp;&nbsp;&nbsp;Joshua Tree, CA - Taylor Junction</div>
+	    <div>8/8&nbsp;&nbsp;&nbsp;&nbsp;Los Angeles, CA - Bootleg Theater</div>
+	    <div>8/9&nbsp;&nbsp;&nbsp;&nbsp;Santa Cruz - The Crepe Place</div>
+	    <div>8/10&nbsp;&nbsp;&nbsp;San Francisco, CA - El Rio</div>
+	    <div>8/11&nbsp;&nbsp;&nbsp;Oakland, CA - Oakland Secret</div>
+	    <div>8/12&nbsp;&nbsp;&nbsp;Arcata, CA - TBA</div>
+	    <div>8/13&nbsp;&nbsp;&nbsp;Portland, OR - The Know</div>
+	    <div>8/25&nbsp;&nbsp;&nbsp;Seattle, WA - Northwest Film Forum / The Holy Mountain live-rescore premiere</div>
 	  </div>
 	  <br>
 	  <br>
 	  <br>
-	  <a id="soundcloud" href="http://soundcloud.com/zenmother" target="_blank"><img src="/static/img/soundcloud_border.png"></a>
+	  <a id="soundcloud" href="http://soundcloud.com/zenmother" target="_blank"><img
+	  src="/static/img/soundcloud_border.png" style="width: 36%;"></a>
 	  <br><br>
-	  <a id="bandcamp" href="http://zenmother.bandcamp.com" target="_blank"><img src="/static/img/bandcamp.gif"></a>
+	  <a id="bandcamp" href="http://zenmother.bandcamp.com" target="_blank"><img
+	  src="/static/img/bandcamp.gif" style="width: 36%;"></a>
 	  <br>
 	  <br>
 	  <br>
-	  <br><br><br>
 	  <h3 class="thanks">THANKS FOR COMING!</h3>
 	  <img src="/static/img/John_Hackett_Anechoic.jpg" style="display: none;">
-	  <img src="/static/img/eazy.png">
+	  <img src="/static/img/eazy.png" style="width: 52%; display: block; margin: auto;">
 
           {% block content %}
           {% endblock %}
