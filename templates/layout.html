@@ -1,6 +1,6 @@
+{% import 'macros.html' as macros %}
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-{% import 'macros.html' as macros %}
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <title>Zen Mother</title>
@@ -160,39 +160,12 @@
 	  <br><br><br>
 	  <img src="/static/img/zen17small.jpeg" style="width: 90%">
 	  <p style="text-align: right; color: #4c1d1d;">photo by <a href="https://www.instagram.com/lalalalaurn/" target="_blank">Lauren Rodriguez</a></p>
+	  <p style="letter-spacing: .5px; font-weight: bold;">upcoming shows</p>
 	  <div class="tourdate" style="color: white; border: 1px solid black; display: inline-block;">
-	    <div>7/6&nbsp;&nbsp;&nbsp;&nbsp;Seattle, WA - Chop Suey *recordrelease</div>
-	    <div>7/12&nbsp;&nbsp;&nbsp;Boise, ID - Neurolux</div>
-	    <div>7/13&nbsp;&nbsp;&nbsp;Salt Lake City, UT - Diabolical Records</div>
-	    <div>7/14&nbsp;&nbsp;&nbsp;Denver, CO - Thee Haus Ov Where?</div>
-	    <div>7/15&nbsp;&nbsp;&nbsp;Wichita, KS - Wichita Psych Fest</div>
-	    <div>7/16&nbsp;&nbsp;&nbsp;Lawrence, KS - Replay Lounge</div>
-	    <div>7/17&nbsp;&nbsp;&nbsp;St Louis, MO - Foam</div>
-	    <div>7/18&nbsp;&nbsp;&nbsp;Chicago, IL - The Hideout</div>
-	    <div>7/19&nbsp;&nbsp;&nbsp;Detroit, MI - Trixie’s</div>
-	    <div>7/20&nbsp;&nbsp;&nbsp;Toronto, ON - Baby G’s</div>
-	    <div>7/21&nbsp;&nbsp;&nbsp;Montreal, QC - The B.O.G</div>
-	    <div>7/22&nbsp;&nbsp;&nbsp;Providence, RI - Machines With Magnets</div>
-	    <div>7/23&nbsp;&nbsp;&nbsp;Brooklyn, NY - Silent Barn</div>
-	    <div>7/26&nbsp;&nbsp;&nbsp;Charlottesville, VA - The Southern</div>
-	    <div>7/27&nbsp;&nbsp;&nbsp;Richmond, VA - Strange Matter</div>
-	    <div>7/28&nbsp;&nbsp;&nbsp;Raleigh, NC - King’s</div>
-	    <div>7/29&nbsp;&nbsp;&nbsp;Boone, NC - Six Fortyone</div>
-	    <div>7/30&nbsp;&nbsp;&nbsp;Atlanta, GA - 360 Cantina</div>
-	    <div>7/31&nbsp;&nbsp;&nbsp;New Orleans - TBA</div>
-	    <div>8/1&nbsp;&nbsp;&nbsp;&nbsp;Austin, TX - Hotel Vegas</div>
-	    <div>8/3&nbsp;&nbsp;&nbsp;&nbsp;Maria, TX - The Capri</div>
-	    <div>8/4&nbsp;&nbsp;&nbsp;&nbsp;Bisbee, AZ - The Quarry</div>
-	    <div>8/5&nbsp;&nbsp;&nbsp;&nbsp;Tucson, AZ - Club Congress</div>
-	    <div>8/6&nbsp;&nbsp;&nbsp;&nbsp;Phoenix, AZ - Lunchbox</div>
-	    <div>8/7&nbsp;&nbsp;&nbsp;&nbsp;Joshua Tree, CA - Taylor Junction</div>
-	    <div>8/8&nbsp;&nbsp;&nbsp;&nbsp;Los Angeles, CA - Bootleg Theater</div>
-	    <div>8/9&nbsp;&nbsp;&nbsp;&nbsp;Santa Cruz - The Crepe Place</div>
-	    <div>8/10&nbsp;&nbsp;&nbsp;San Francisco, CA - El Rio</div>
-	    <div>8/11&nbsp;&nbsp;&nbsp;Oakland, CA - Oakland Secret</div>
-	    <div>8/13&nbsp;&nbsp;&nbsp;Portland, OR - The Know</div>
-	    <div>8/15&nbsp;&nbsp;&nbsp;Seattle, WA - The Sunset Tavern</div>
-	    <div>8/25&nbsp;&nbsp;&nbsp;Seattle, WA - Northwest Film Forum / The Holy Mountain live-rescore premiere</div>
+
+	    {% for show in upcoming_shows.resultsPage.results.event %}
+	      {{ macros.display_show(show) }}
+	    {% endfor %}
 	  </div>
 	  <br>
 	  <br>
