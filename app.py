@@ -47,9 +47,9 @@ def login_required(test):
 def home():
     posts = []
     upcoming_shows =\
-      requests.get("http://api.songkick.com/api/3.0/artists/8543164/calendar.json?apikey=zdpZeMNcromcrzB4&order=desc")
+      requests.get("http://api.songkick.com/api/3.0/artists/8823199/calendar.json?apikey=zdpZeMNcromcrzB4&order=desc")
     past_shows =\
-      requests.get("http://api.songkick.com/api/3.0/artists/8543164/gigography.json?apikey=zdpZeMNcromcrzB4&order=desc")
+      requests.get("http://api.songkick.com/api/3.0/artists/8823199/gigography.json?apikey=zdpZeMNcromcrzB4&order=desc")
     return render_template('home.html',
                posts=posts,
 			   upcoming_shows=upcoming_shows.json(),
@@ -62,7 +62,7 @@ def signup_post():
         email = request.form['email']
         #email = request.args.get('email')
         if email:
-            pm.listSubscribe(id="794bb3a604", email_address=email, double_optin=False)
+            pm.listSubscribe(id="4f96a5641b", email_address=email, double_optin=False)
 
     except MailChimpException, e:
         print e.code
