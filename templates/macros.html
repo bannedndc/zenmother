@@ -1,97 +1,72 @@
 {% macro music() -%}
   <div class="row">
-    <div class="col-sm-6">
-      <iframe style="border: 0; width: 350px; height: 470px;"
-      src="https://bandcamp.com/EmbeddedPlayer/album=1194547090/size=large/bgcol=333333/linkcol=e32c14/tracklist=false/transparent=true/"
-      seamless><a href="http://zenmother.bandcamp.com/album/i-was-made-to-be-like-her">I Was Made To
-      Be Like Her by Zen Mother</a></iframe>
+    <div class="col-sm-5">
+      <iframe style="border: 0;" src="https://bandcamp.com/EmbeddedPlayer/track=3028174152/size=large/bgcol=333333/linkcol=ffffff/minimal=true/transparent=true/" seamless><a href="http://nordra.bandcamp.com/track/apologize-to-me-humanity">Apologize To Me, Humanity by Nordra</a></iframe>
     </div>
-    <div class="col-sm-6">
-      <iframe style="border: 0; width: 350px; height: 470px;"
-      src="https://bandcamp.com/EmbeddedPlayer/album=3139629884/size=large/bgcol=333333/linkcol=e32c14/tracklist=false/transparent=true/"
-      seamless><a href="http://zenmother.bandcamp.com/album/the-great-mother">The Great Mother by Zen
-      Mother</a></iframe>
+    <div class="col-sm-5">
+      <iframe style="border: 0; width: 350px; height: 350px;" src="https://bandcamp.com/EmbeddedPlayer/album=188686871/size=large/bgcol=333333/linkcol=ffffff/minimal=true/transparent=true/" seamless><a href="http://nordra.bandcamp.com/album/pylon-ii">PYLON II by Nordra</a></iframe>
     </div>
   </div>
 {%- endmacro %}
 
-{% macro shows(upcoming_shows, past_shows) -%}
-  <strong style="font-style: italic;">upcoming</strong>
-  {% set upcoming_shows = upcoming_shows.resultsPage.results.event %}
-  {% for show in upcoming_shows %}
-    {{ _display_show(show) }}
-  {% endfor %}
+{% macro updates(posts, upcoming_shows, past_shows) -%}
+  {% if config.MONI %}
+  {% endif %}
+  {% set post = {'created_at': 'July 23, 2017', 'content': 'SIGE Records is going to be putting out the first Nordra record entitled: Make a Smooth Path From Point to Point.  Spring 2017 is the expected release time. Join the email list to get more updates on the new record.  Make a Smooth Path From Point to Point is about the conversion from analog to digital, what is lost, and what is gained, and how accurate communication or rather the lack thereof can be cripplingly depressing. Like most cripplingly depressing subjects, a glow or sense of relief follows.', 'images': [{'src': 'static/img/saint_vitus.png', 'desc': 'Nordra at Saint Vitus - SUMAC, Jaye Jayle tour, Aug 2016'}]} %}
+  {% set posts = [post] %}
 
-  <hr/>
-  <strong style="font-style: italic;">past</strong>
+  {% set upcoming_shows =  upcoming_shows.resultsPage.results.event %}
   {% set past_shows =  past_shows.resultsPage.results.event %}
-  {% for show in past_shows %}
-    {{ _display_show(show) }}
-  {% endfor %}
+  <div class="row">
+    <div class="col-sm-6">
+      {% for post in posts %}
+        {{ _display_post(post) }}
+      {% endfor %}
+    </div>
+    <div class="col-sm-6" style="background-color: rgba(128, 128, 128, 0.5); padding-top: 10px; padding-bottom: 10px;">
+      <div style="font-style: italic; margin-bottom: 20px; font-weight: 700;">UPCOMING EVENTS</div>
+      {% for show in upcoming_shows %}
+        {{ _display_show(show) }}
+      {% endfor %}
+      <br><br>
+
+      <div style="font-style: italic; margin-bottom: 20px; font-weight: 700;">PAST EVENTS</div>
+      {% for show in past_shows %}
+        {{ _display_show(show) }}
+      {% endfor %}
+    </div>
+  </div>
 {%- endmacro %}
 
 {% macro contact() -%}
-  <span>magiczenmother@gmail.com</span>
-  <!-- email list -->
-  <form class="form-inline" action="{{ url_for('signup_post') }}" method="post">
-    <div class="form-group">
-      <label for="email" style="font-weight: 300;"><span>JOIN MAILING LIST</span></label>
-      <input id="email" type="email" name="email" class="form-control" placeholder="email address"
-      style="border-radius: 0; width: 230px; color: red;">
-    </div>
-    <button type="submit" class="btn" style="background-color: transparent;"><span>SUBMIT</span></button>
-  </form>
-  <br><br><br>
+  <strong>NORDRA BOOKING AND FILM SCORE INQUIRIES:</strong>
+  <br>magickmuther@gmail.com<br>
+  <br>
+  <strong>ZEN MOTHER BOOKING: </strong>
+  <br>magiczenmother@gmail.com<br>
+{%- endmacro %}
+
+{% macro _display_post(post) -%}
+  {% for image in post.images %}
+    <img src="{{ image.src }}" alt="{{ image.desc }}" style="max-width: 100%;"/>
+  {% endfor %}
+  <br>
+  {% if False %}
+  <div style="margin-top: 10px;">{{ post.content | safe }}</div>
+  {% endif %}
+  <div style="margin-top: 10px;">{{ '' }}</div>
 {%- endmacro %}
 
 {% macro _display_show(show) -%}
-  <div class="row" style="margin-bottom: 10px;">
-    <div class="col-xs-3 col-sm-2">
-      {% set date = show.start.date.split('-') %}
-      <span>{{ date[1] }}/{{ date[2] }}/{{ date[0] }}</span><br>
-    </div>
-    <div class="col-xs-9 col-sm-10">
-      <a href="{{ show.uri }}" target="_blank" style="font-weight: 700;">
-	<span>{{ show.venue.displayName }}, {{ show.location.city[:-4] }}</span>
-      </a>
-      <br>
-      <span>
-	{# for performance in show.performance #}
-	  {# performance.artist.displayName #}{# ',' if not loop.last
-	  #}
-	{# endfor #}
-      </span>
-    </div>
+  <div style="margin-bottom: 10px;">
+    {% set date = show.start.date.split('-') %}
+    <span style="font-weight: 700;">
+      {% for performance in show.performance %}
+        {{ performance.artist.displayName }}{{ ',' if not loop.last }}
+      {% endfor %}
+    </span><br>
+    {{ date[1] }}/{{ date[2] }}<br>
+    {{ show.venue.displayName }}<br>
+    {{ show.location.city[:-4] }}<br>
   </div>
-{%- endmacro %}
-
-{% macro photos() -%}
-  <div class="row">
-    <div class="col-xs-12">
-      <img src="/static/img/zen17small.jpeg"> 
-      <img src="/static/img/mon.jpg">
-      <img src="/static/img/adam.jpg">
-      <img src="/static/img/moni.jpg">
-      <img src="/static/img/green.jpg">
-      <img src="/static/img/adaam.jpg">
-      <img src="/static/img/highway.jpg">
-      <img src="/static/img/lofi.jpg">
-      <img src="/static/img/lafing.jpg">
-      <img src="/static/img/adum.jpg">
-      <img src="/static/img/space.jpg">
-    </div>
-  </div>
-{%- endmacro %}
-
-{% macro videos() -%}
-  <div class="row">
-    <div class="col-xs-12">
-      <iframe width="100%" height="400" src="https://www.youtube.com/embed/EH3gqI2NAiE" frameborder="0"
-      allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
-      <iframe width="100%" height="400" src="https://www.youtube.com/embed/mrnvwD9q4IE" frameborder="0"
-      allow="autoplay; encrypted-media" allowfullscreen></iframe>
-    </div>
-  </div>
-
 {%- endmacro %}
